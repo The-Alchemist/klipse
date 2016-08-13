@@ -25,7 +25,7 @@
           (fn []
             (!> js/Sk.importMainWithBody "<stdin>" false exp true)))
       (.then (fn [mod]
-               (print "success to eval skulpt: " exp))
+               (!> js/console.info "success to eval skulpt: " exp))
              (fn [err]
                (put! c (str "error: " err)))))
     c))
